@@ -1,0 +1,41 @@
+Arduino IDE settings for Astronomy Desk
+4.3 inch Freenove FNK0115B. The 1.0 file ota/astro_43.bin was built with these rows.
+
+Arduino IDE 1.8.18
+ESP32 board package 3.3.12
+
+Board: ESP32S3 Dev Module
+USB CDC On Boot: Enabled
+CPU Frequency: 240MHz (WiFi)
+Core Debug Level: None
+USB DFU On Boot: Disabled
+Erase All Flash Before Sketch Upload: Disabled
+Events Run On: Core 1
+Flash Mode: QIO 80MHz
+Flash Size: 16MB (128Mb)
+JTAG Adapter: Disabled
+Arduino Runs On: Core 1
+USB Firmware MSC On Boot: Disabled
+Partition Scheme: 16M Flash (3MB APP/9.9MB FATFS)
+PSRAM: OPI PSRAM
+Upload Mode: UART0 / Hardware CDC
+Upload Speed: 921600
+USB Mode: Hardware CDC and JTAG
+Zigbee Mode: Disabled
+
+Libraries:
+GFX Library for Arduino 1.6.8
+TJpg_Decoder 1.1.0
+
+ArduinoJson 7.4.2 by Benoit Blanchon is in the libraries folder. That is the library kept for these desks. It is not Arduino_JSON. This sketch does not include ArduinoJson.
+
+Wi-Fi, HTTP, Preferences, SPI, SD, and Update come with the ESP32 board package.
+
+Open the sketch astro_desk\astro_desk.ino. The star list, asteroid orbits, satellite paths, world picture, photo names, and the touch files are in that same folder. The touch files are XPT2046_Touchscreen.h and XPT2046_Touchscreen.cpp. They belong on this 4.3 board.
+
+Prefs name is astro43. The first empty boot may copy Wi-Fi and place from ult43, then skywx, then ultwx. It only reads those. Factory reset clears astro43 only, and it does not copy the other desk again.
+
+About checks GitHub. Repo https://github.com/stefi01/Astronomy-4x3-inch-display
+CHECK reads ota/version.txt. INSTALL reads ota/astro_43.bin.
+The partition has two app slots, app0 and app1, each 3MB. If the board has no second slot, About says no update slot.
+Do not install the 7 inch bin on this screen.
